@@ -1,15 +1,13 @@
 name: First Workflow
 
-on: [push]
+on: push
 
-jobs:
+jobs: 
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
+      - name: say hello
         run: echo "Hello, world!"
-      
-   
 
 
   say-goodbye:
