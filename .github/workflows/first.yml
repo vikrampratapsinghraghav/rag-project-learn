@@ -8,13 +8,12 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, world!"
-      - name: Say Goodbye
       
    
 
 
-   say-goodbye:
-     runs-on: ubuntu-latest
-     steps: 
-       -name: say goodbye
+  say-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say goodbye
         run: echo "Goodbye, world!"
