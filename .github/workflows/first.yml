@@ -1,18 +1,11 @@
-name: First Workflow
+name: first workflow 
 
-on: push
-
-jobs: 
+on: 
+  push: 
+    branches: [ main ]
+    
+jobs:
   say-hello:
-    runs-on: ubuntu-latest
-    steps:
+    run-on: ubuntu-latest
+    steps: 
       - name: say hello
-        run: echo "Hello, world!"
-
-
-  say-goodbye:
-    needs: say-hello
-    runs-on: ubuntu-latest
-    steps:
-      - name: say goodbye
-        run: echo "Goodbye, world!"
