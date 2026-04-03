@@ -6,6 +6,6 @@ on:
     
 jobs:
   say-hello:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: say hello
