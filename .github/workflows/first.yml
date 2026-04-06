@@ -6,23 +6,46 @@ on:
 
 
 jobs: 
-  build:
+  install: 
     runs-on: ubuntu-latest
-    defaults:
-      run:
+    defaults: 
+      run: 
         working-directory: frontend
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
+      steps:
+        - name: checkout code
+          uses: actions/checkout@v4
 
-      - name: setup node
-        uses: actions/setup-node@v4
+        - name: setup node
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
 
-      - name: install dependencies
-        run: npm ci
+        - name: install dependencies
+          run: npm ci
 
-      - name: build 
-        run: npm run build
+  build:
+    runs-on: ubuntu-lates
+    needs: install
+    defaults: 
+      run: 
+        working-directory: frontend
+      steps: 
+        - name: checkout code 
+          uses: actions/checkout@v4
+
+        - name: setup node
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+
+        - name: install dependencies
+          run: npm ci
+
+        - name: build
+          run: npm run build
+         
+          
+
 
       
       
